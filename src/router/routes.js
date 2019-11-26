@@ -1,3 +1,4 @@
+import HomeChild from "./child";
 export const routes = [
   {
     path: "/",
@@ -8,17 +9,7 @@ export const routes = [
     path: "/home",
     name: "首页",
     component: () => import("@/components/home"),
-    icon: "home"
-  },
-  {
-    path: "/userManagement",
-    name: "userManagement",
-    component: () => import("@/views/userManagement")
-  },
-  {
-    path: "/contactUs",
-    name: "contactUs",
-    component: () => import("@/views/contactUs")
+    children: HomeChild
   }
 ];
 
