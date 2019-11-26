@@ -3,13 +3,15 @@
     <router-view />
   </div>
 </template>
-
 <script>
 const App = {
   name: "App"
 };
-
 export default App;
 </script>
-
-<style lang="scss"></style>
+<style lang="scss">
+#app {
+  width: 100%;
+  height: 100%;
+}
+</style>

@@ -20,7 +20,7 @@ import store from "@/store";
 
 import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
-
+import "@/assets/css/reset.css";
 import { upperCase } from "./utils/string/upperCase";
 import { lowerCase } from "./utils/string/lowerCase";
 import { dateformat } from "./utils/date/dateformat";

@@ -7,7 +7,7 @@ export const routes = [
   {
     path: "/home",
     name: "首页",
-    component: () => import("@/views/Home"),
+    component: () => import("@/components/home"),
     icon: "home"
   },
   {
