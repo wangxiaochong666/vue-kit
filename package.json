@@ -1,0 +1,209 @@
+{
+  "name": "vue",
+  "version": "0.1.0",
+  "private": true,
+  "author": "microld <2627500295@qq.com>",
+  "main": "src/index.js",
+  "keywords": [],
+  "description": "",
+  "repository": {},
+  "homepage": "https://www.mehost.cn/",
+  "scripts": {
+    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "start": "npm run dev",
+    "lint": "eslint --ext .js,.vue src",
+    "build": "node build/build.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,vue}": [
+      "eslint --fix --ext .js,.jsx,.vue",
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "printWidth": 100,
+    "tabWidth": 2,
+    "singleQuote": false
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env"
+      ]
+    ],
+    "plugins": [
+      "@babel/plugin-syntax-dynamic-import",
+      "@babel/plugin-proposal-nullish-coalescing-operator",
+      "@babel/plugin-proposal-optional-chaining",
+      [
+        "component",
+        {
+          "libraryName": "element-ui",
+          "styleLibraryName": "theme-chalk"
+        }
+      ]
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {}
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "eslintIgnore": [
+    "vue.config.js",
+    "config",
+    "node_modules/**/*"
+  ],
+  "postcss": {
+    "plugins": {
+      "postcss-preset-env": {},
+      "postcss-calc": {},
+      "css-mqpacker": {},
+      "postcss-css-variables": {},
+      "postcss-import": {},
+      "postcss-custom-properties": {},
+      "cssnano": {
+        "preset": [
+          "default",
+          {
+            "discardComments": {
+              "removeAll": true
+            }
+          }
+        ]
+      }
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "dependencies": {
+    "@babel/preset-env": "^7.7.4",
+    "@vue/composition-api": "^0.3.2",
+    "bootstrap": "^4.3.1",
+    "core-js": "^3.1.4",
+    "crypto-js": "^3.1.9-1",
+    "dayjs": "^1.8.17",
+    "element-ui": "^2.11.1",
+    "es6-promise": "4.2.8",
+    "js-base64": "^2.5.1",
+    "regenerator-runtime": "^0.13.3",
+    "tachyons-sass": "^4.9.5",
+    "vue": "^2.5.22",
+    "vue-class-component": "^7.1.0",
+    "vue-i18n": "^8.15.0",
+    "vue-router": "3.0.7",
+    "vuex": "3.1.1",
+    "webpack-cli": "^3.3.10",
+    "whatwg-fetch": "3.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.4.4",
+    "@babel/plugin-proposal-optional-chaining": "^7.2.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "@nenado/interpolate-html-plugin": "^1.0.2",
+    "@types/cssnano": "^4.0.0",
+    "@types/postcss-calc": "^7.0.0",
+    "@vue/cli-plugin-babel": "3.6.0",
+    "@vue/cli-plugin-eslint": "3.6.0",
+    "@vue/cli-service": "3.6.0",
+    "autoprefixer": "^7.1.2",
+    "babel-core": "^6.22.1",
+    "babel-eslint": "^10.0.1",
+    "babel-helper-vue-jsx-merge-props": "^2.0.3",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-component": "^1.1.1",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-plugin-transform-runtime": "^6.22.0",
+    "babel-plugin-transform-vue-jsx": "^3.5.0",
+    "babel-preset-env": "^1.3.2",
+    "babel-preset-stage-2": "^6.22.0",
+    "chalk": "^2.0.1",
+    "commitizen": "4.0.3",
+    "copy-webpack-plugin": "^4.0.1",
+    "css-loader": "^0.28.0",
+    "css-mqpacker": "^7.0.0",
+    "cssnano": "^4.1.10",
+    "cz-conventional-changelog": "3.0.2",
+    "dotenv": "^8.0.0",
+    "dotenv-expand": "^5.1.0",
+    "eruda-webpack-plugin": "^1.2.0",
+    "eslint": "^6.7.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-import-resolver-webpack": "^0.8.3",
+    "eslint-loader": "^3.0.2",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-vue": "^6.0.1",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^1.1.4",
+    "friendly-errors-webpack-plugin": "^1.6.1",
+    "html-webpack-plugin": "^4.0.0-beta.8",
+    "husky": "3.0.2",
+    "lint-staged": "9.2.1",
+    "node-notifier": "^5.1.2",
+    "node-sass": "^4.12.0",
+    "optimize-css-assets-webpack-plugin": "^3.2.0",
+    "ora": "^1.2.0",
+    "portfinder": "^1.0.13",
+    "postcss-calc": "^7.0.1",
+    "postcss-css-variables": "^0.13.0",
+    "postcss-custom-properties": "^9.0.2",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^2.0.8",
+    "postcss-plugin-px2rem": "^0.8.1",
+    "postcss-preset-env": "^6.7.0",
+    "postcss-url": "^7.2.1",
+    "react-dev-utils": "^9.0.1",
+    "rimraf": "^2.6.0",
+    "sass-loader": "^7.1.0",
+    "sass-resources-loader": "^2.0.1",
+    "semver": "^5.3.0",
+    "shelljs": "^0.7.6",
+    "uglifyjs-webpack-plugin": "^1.1.1",
+    "url-loader": "^0.5.8",
+    "vue-cli-plugin-sass-resources": "^1.0.1",
+    "vue-loader": "^15.7.2",
+    "vue-style-loader": "^3.0.1",
+    "vue-template-compiler": "^2.5.21",
+    "webpack": "^4.41.2",
+    "webpack-bundle-analyzer": "^2.9.0",
+    "webpack-chain": "^6.0.0",
+    "webpack-dev-server": "^3.9.0",
+    "webpack-manifest-plugin": "^2.0.4",
+    "webpack-merge": "^4.1.0"
+  },
+  "peerDependencies": {},
+  "license": "MIT"
+}
