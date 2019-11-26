@@ -10,9 +10,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const FriendlyErrorsPlugin = require("friendly-errors-webpack-plugin");
 const portfinder = require("portfinder");
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
-const InlineChunkHtmlPlugin = require("react-dev-utils/InlineChunkHtmlPlugin");
+// const InlineChunkHtmlPlugin = require("react-dev-utils/InlineChunkHtmlPlugin");
 const InterpolateHtmlPlugin = require("@nenado/interpolate-html-plugin");
-const ErudaWebpackPlugin = require("eruda-webpack-plugin");
 
 const getClientEnvironment = require("../config/env");
 
@@ -56,16 +55,12 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         BASE_URL: config.dev.assetsPublicPath
       }
     }),
-    // process.env.PLATFORM === "MOBILE" &&
-    //   process.env.NODE_ENV === "development" &&
-    //   new ErudaWebpackPlugin(),
     new InterpolateHtmlPlugin({
       ...require("../config/dev.env"),
       ...env.raw,
       BASE_URL: config.dev.assetsPublicPath
     }),
     new VueLoaderPlugin(),
-    // new InlineChunkHtmlPlugin(HtmlWebpackPlugin, /runtime~.+[.]js/),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
     new webpack.NoEmitOnErrorsPlugin(),
