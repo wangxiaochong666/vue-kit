@@ -15,7 +15,7 @@ import setConfig from "@/lib/set-config";
 import filters from "@/lib/filters";
 
 import App from "@/containers/App";
-import routes from "@/routes";
+import routes from "@/router/routes";
 import store from "@/store";
 
 import ElementUI from "element-ui";
