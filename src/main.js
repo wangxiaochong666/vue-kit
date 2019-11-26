@@ -42,15 +42,11 @@ export const router = new Router({
   routes
 });
 
-import zhCN from "@/locales/zh-CN";
-import enUS from "@/locales/zh-CN";
-
 const i18n = new VueI18n({
   locale: "zh-CN", // 语言标识
-  //this.$i18n.locale // 通过切换locale的值来实现语言切换
   messages: {
-    "zh-CN": zhCN, // 中文语言包
-    "en-US": enUS // 英文语言包
+    "zh-CN": require("@/locales/zh-CN"), // 中文语言包
+    "en-US": require("@/locales/en-US") // 英文语言包
   }
 });
 

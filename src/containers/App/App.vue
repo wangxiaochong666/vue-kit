@@ -9,9 +9,4 @@ const App = {
 };
 export default App;
 </script>
-<style lang="scss">
-#app {
-  width: 100%;
-  height: 100%;
-}
-</style>
+<style lang="scss"></style>
