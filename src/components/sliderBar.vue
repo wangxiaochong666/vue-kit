@@ -4,7 +4,7 @@
       router
       default-active="2"
       class="el-menu-vertical-demo"
-      background-color="#545c64"
+      :background-color="bgStyleList[curTheme].menuStyle[0]"
       text-color="#fff"
       active-text-color="#ffd04b"
     >
@@ -15,6 +15,22 @@
   </div>
 </template>
 <script>
-export default {};
+import {mapState,mapMutations} from 'vuex';
+export default {
+  computed:{
+    ...mapState('bgColor',{
+      curTheme:'curTheme'
+    }),
+    ...mapState('bgColor',{
+      bgStyleList:'bgStyleList'
+    })
+  },
+};
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.slider_menu{
+  .el-menu{
+    border: 0;
+  }
+}
+</style>

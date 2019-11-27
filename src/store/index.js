@@ -1,20 +1,13 @@
 import Vue from "vue";
 import Vuex from "vuex";
 
-import * as modules from "@/models";
-
+import bgColor from './bgColor/index';
 Vue.use(Vuex);
 
-const GlobalState = {
-  state: {},
-  getters: {},
-  actions: {},
-  mutations: {}
-};
-
 const store = new Vuex.Store({
-  ...GlobalState,
-  modules
+  modules:{
+    bgColor
+  }
 });
 
 export default store;
